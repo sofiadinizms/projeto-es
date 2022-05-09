@@ -53,46 +53,6 @@ Tecnologias que utilizei para construir essa aplicação
 
 **Clone o projeto e acesse a pasta**
 
-```bash
-$ git clone https://github.com/isaquetdiniz/desafio-trinity.git && cd desafio-trinity
-```
-
-**Siga os passos*
-
-```bash
-# Navegue até a pasta do server, instale as dependências e inicie-o com:
-$ cd server
-$ yarn
-
-# Para esse projeto utilizei um banco de dados que já estava deployado, o ElephantSQL. Crie uma instância para ser usada aqui e copie a url.
-# Crie um .env na raiz do projeto com 
-
-DB_TYPE=postgres
-DB_URL=<sua_url>
-
-# Agora podemos rodar o servidor com
-$ yarn start
-
-# A partir desse momento já é possível realizar querys para nossa API, se quiser abra o Insomnia e tente realizar um query:
-query {
-  getUsers{
-    name
-    id
-    zipcode
-  }
-}
-
-# Com o servidor rodando, podemos iniciar o nosso client. Para isso, abra um novo terminal e entre em /desafio-trinity/client
-# Instale as dependências com:
-$ yarn
-# E inicie o Next.js com:
-$ yarn dev
-
-# Segure CTRL+<Mouse Esquerdo> em cima do link no terminal para abrir a página em seu navegador
-
-# Prontinho, o projeto está rodando!
-
-```
 
 ## 📝 License
 
@@ -100,4 +60,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Made with 💜 by Isaque Diniz (itd), Pedro Manoel (pmdbma), Sofia Diniz (sdms), Vitória Pinheiro (vps3)👋
+Made with 💜 by Sofia Diniz (sdms) and Vitória Pinheiro (vps3)👋
