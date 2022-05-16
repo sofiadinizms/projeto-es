@@ -15,7 +15,7 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
       {section === 0 && (
         <>
         <Text style={styles.title}>Menu principal</Text>
-        <TouchableOpacity style={styles.menuButton} >
+        <TouchableOpacity style={styles.menuButton}  onPress={() => {navigation.navigate("LevelOne")}} >
           <Text style={styles.buttonText}>Começar</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuButton} onPress={() => {setSection(1)}} >
