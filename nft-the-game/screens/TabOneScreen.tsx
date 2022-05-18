@@ -1,10 +1,24 @@
 import React, { useState} from 'react';
-import { StyleSheet, TouchableOpacity, Linking } from 'react-native';
+import { StyleSheet, TouchableOpacity, Linking, Share } from 'react-native';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   const [section, setSection] = useState(0);
+
+  const onShare = async () => {
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const result = await Share.share({
+        message: `Você sabia que qualquer pessoa pode ter um NFT? Muitas pessoas ainda acham que o NFT pode representar apenas artes digitais. Porém, ele já está inserido em diversas áreas, como no setor de alimentos, música, moda e até esportes.\n
+        Venha conosco conhecer mais sobre essa tecnologia!\n
+        App Store: https://apps.apple.com/br/app/ntf-oo-jogo\nGoogle Play: https://play.google.com/apps/internaltest/4701163021900152778\nVisite o nosso site:\nhttp://projeto-nft-o-jogo.herokuapp.com/`,
+      });
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
 
   return (
     <View style={styles.container}>
@@ -26,8 +40,8 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
             <TouchableOpacity style={styles.menuButton} onPress={() => {setSection(2)}}>
               <Text style={styles.buttonText}>Sobre nós</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.menuButton} onPress={() => {navigation.navigate("InConstruction")}} >
-              <Text style={styles.buttonText}>Configurações</Text>
+            <TouchableOpacity style={styles.menuButton} onPress={() => {onShare()}} >
+              <Text style={styles.buttonText}>Compartilhar</Text>
             </TouchableOpacity>
           </View>
         </>
@@ -41,7 +55,7 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
             <Text style={styles.buttonText}>Nível 1 - O Museu</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuButton} onPress={() => {navigation.navigate("LevelTwo")}} >
-            <Text style={styles.buttonText}>Nível 2 - O labirinto</Text>
+            <Text style={styles.buttonText}>Nível 2 - Os planetas</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuButton} onPress={() => {navigation.navigate("LevelThree")}} >
             <Text style={styles.buttonText}>Nível 3 - O espaço</Text>
@@ -58,10 +72,10 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
           </View>
           <View style={styles.menuButton} >
             <Text style={styles.regularText}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            NFT:O Jogo foi idealizado e desenvolvido por Sofia Diniz e Vitória Pinheiro, ambas naturais de Recife-PE e estudantes de Sistemas de Informação e Engenharia da computação, respectivamente, na Universidade Federal de Pernambuco. O jogo surgiu como um projeto para a cadeira de Engenharia de Software, ministrada por Vinicius Garcia no primeiro semestre de 2022. Vitória Pinheiro tem interesse em desenvolvimento web e mobile, apesar de preferir Mobile. Por sua vez, Sofia Diniz tem interesse em desenvolvimento full-stack web e front-end no contexto Mobile.
             </Text>
           </View>
-          <TouchableOpacity style={styles.menuButton} onPress={() => {Linking.openURL('https://projeto-nft-o-jogo.herokuapp.com')}}>
+          <TouchableOpacity style={styles.menuButton} onPress={() => {Linking.openURL('http://projeto-nft-o-jogo.herokuapp.com/')}}>
             <Text style={styles.buttonText}>Conheça nosso site</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuButton} onPress={() => {setSection(0)}}>
