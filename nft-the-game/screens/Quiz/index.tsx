@@ -423,7 +423,7 @@ export default function QuizScreen({ navigation }: RootTabScreenProps<'Quiz'>) {
           </Title>
           )
         }
-          <Button onPress={() => {navigation.goBack()}}>
+          <Button onPress={() => {navigation.navigate("TabOne")}}>
             <Answer>
               Voltar
             </Answer>
