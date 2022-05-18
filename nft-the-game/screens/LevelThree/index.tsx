@@ -6,12 +6,12 @@ import {
   Button,
 } from './styles';
 
-export default function LevelOneScreen({ navigation }: RootTabScreenProps<'LevelOne'>) {
+export default function LevelThreeScreen({ navigation }: RootTabScreenProps<'LevelThree'>) {
   const [test, setTest] = useState();
   return (
     <View>
       <Text>
-        Level One
+        Level Three
       </Text>
       <Button onPress={() => {navigation.goBack()}}>
         <Text>

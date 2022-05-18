@@ -1,17 +1,17 @@
 import React from 'react';
 import { Image, StyleSheet, TouchableOpacity } from 'react-native';
-import { Text, View } from '../components/Themed';
-import { RootTabScreenProps } from '../types';
+import { Text, View } from '../../components/Themed';
+import { RootTabScreenProps } from '../../types';
 
-export default function TabTwoScreen({ navigation }: RootTabScreenProps<'TabTwo'>) {
+export default function InContructionScreen({ navigation }: RootTabScreenProps<'InConstruction'>) {
   return (
     <View style={styles.container}>
-      <Text style={styles.mainTitle}>Tela em construção</Text>
+      <Text style={styles.title}>Tela em construção</Text>
       <View style={styles.separator} />
       <Image
-        source={require('../assets/images/construction.png')}
+        source={require('../../assets/images/construction.png')}
       />
-      <TouchableOpacity style={styles.menuButton} onPress={() => {navigation.navigate("LevelOne")}} >
+      <TouchableOpacity style={styles.menuButton} onPress={() => {navigation.goBack()}} >
         <Text style={styles.buttonText}>Voltar</Text>
       </TouchableOpacity>
     </View>
