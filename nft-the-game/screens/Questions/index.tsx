@@ -1,53 +1,97 @@
 /* eslint-disable global-require */
 import React from 'react';
-import { Button, FlatList, StyleSheetProperties } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { DropDown } from '../../components';
-import { TableContainer, TableTitle } from './style';
+import {
+  Button,
+  FlatList,
+  StyleSheetProperties,
+  TouchableWithoutFeedback,
+} from 'react-native';
+import DropDown from '../../components/DropDown';
+import { RootTabScreenProps } from '../../types';
+import {
+  ArrowContainer,
+  HeaderContainer,
+  TableContainer,
+  TableTitle,
+} from './style';
 
 const QuestionsInfo = [
   {
-    question: 'Lorem ipsum dolor ?',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    question: 'O que significa NFT?',
+    answer: 'Token não-fungível',
   },
   {
-    question: 'Lorem ipsum dolor ?',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    question: 'Quais das seguintes indústrias estão envolvidas com NFTs?',
+    answer: 'Entretenimento, moda, arte e etc',
   },
   {
-    question: 'Lorem ipsum dolor ?',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    question: 'O que significa "mintear um NFT"?',
+    answer: 'Criar um NFT',
   },
   {
-    question: 'Lorem ipsum dolor ?',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    question: 'Qual dos métodos abaixo é uma maneira insegura de se manter um NFT?',
+    answer: 'Servidor centralizado',
   },
   {
-    question: 'Lorem ipsum dolor ?',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    question: 'Qual é o padrão técnico para NFTs na blockchain Ethereum?',
+    answer: 'ERC-721',
   },
   {
-    question: 'Lorem ipsum dolor ?',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    question: 'Qual das opções a seguir é o método padrão para informar aos aplicativos onde encontrar os metadados de um determinado item?',
+    answer: 'TokenURI',
   },
   {
-    question: 'Lorem ipsum dolor ?',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    question: 'O que é uma criptomoeda ?',
+    answer: 'Um tipo de dinheiro',
+  },
+  {
+    question: 'O que é uma blockchain ?',
+    answer: 'Um tipo criptomoeda',
+  },
+  {
+    question: ' É possível comprar memes com criptomoedas?',
+    answer: 'Sim',
+  },{
+    question: 'NFT diz respeito a que?',
+    answer: 'Uma categoria de CRIPTOMOEDAS, focadas em ativos únicos.',
+  },{
+    question: 'NFT  está relacionado a que?',
+    answer: 'A Tokens não fungível representa algo específico e individual',
+  },{
+    question: 'Quem pode investir em NFT?',
+    answer: ' É necessário entender que o investimento está sujeito à alta volatilidade tanto do jogo, por exemplo, quanto do mercado.',
+  },
+  {
+    question: 'Qual o principal valor do NFT?',
+    answer: 'O valor da confiança na autenticidade',
+  },{
+    question: 'Existe relação entre dados e valores realizada pela NFT ?',
+    answer: 'Sim, é possível por causa de uma tecnologia chamada Blockchain',
+  },{
+    question: 'Quem pode criar um NFT?',
+    answer: 'Pode ser criado por qualquer pessoa, afinal praticamente tudo no meio digital pode virar um NFT',
+  },{
+    question: 'Os NFTs podem ser copiados?',
+    answer: 'Não, são projetados para dar a você algo que não pode ser copiado',
+  },{
+    question: 'O que NFT representa virtualmentes?',
+    answer: 'Podem representar virtualmente qualquer tipo de item, seja ele real ou intangível',
   },
 ];
-
-const Questions: React.FC = () => {
-  const navigation = useNavigation();
+export default function QuestionsScreen({ navigation }: RootTabScreenProps<'Questions'>) {
 
   return (
     <TableContainer>
-      <TableTitle>Perguntas e respostas</TableTitle>
-      <AppDivisor width={100} height={1} color="#EBEBEB" />
+      <HeaderContainer>
+        <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
+          <ArrowContainer source={require('../../assets/images/arrow-left.png')} />
+        </TouchableWithoutFeedback>
+        <TableTitle>Perguntas e respostas</TableTitle>
+      </HeaderContainer>
       <FlatList
         data={QuestionsInfo}
         scrollEnabled
         showsVerticalScrollIndicator={false}
-        ItemSeparatorComponent={() => <AppDivisor width={100} height={1} color="#EBEBEB" />}
         renderItem={({ item }) => (
           <DropDown
             question={item.question}
@@ -58,5 +102,3 @@ const Questions: React.FC = () => {
     </TableContainer>
   );
 };
-
-export default Questions;

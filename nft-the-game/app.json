@@ -4,13 +4,13 @@
     "slug": "nft-the-game",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/appIcon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./assets/images/logo-white.png",
+      "resizeMode": "center",
+      "backgroundColor": "#41B2B9"
     },
     "ios": {
       "supportsTablet": false,
@@ -21,8 +21,8 @@
       "package": "com.vitoriadeveloper.nftthegame",
       "versionCode": 1,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/appIcon.png",
+        "backgroundColor": "#41B2B9"
       }
     },
     "updates": {
@@ -32,7 +32,7 @@
       "**/*"
     ],
     "web": {
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/appIcon.png"
     }
   }
 }

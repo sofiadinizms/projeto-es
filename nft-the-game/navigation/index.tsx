@@ -19,9 +19,9 @@ import InConstructionScreen from '../screens/InConstruction';
 import LevelOneScreen from '../screens/LevelOne';
 import LevelTwoScreen from '../screens/LevelTwo';
 import LevelThreeScreen from '../screens/LevelThree';
-import QuizScreen from '../screens/QuizScreen';
-import QuestionsScreen from '../screens/QuestionsScreen';
-import ScoreScreen from '../screens/ScoreScreen';
+import QuizScreen from '../screens/Quiz';
+import QuestionsScreen from '../screens/Questions';
+import ScoreScreen from '../screens/Score';
 
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
@@ -50,6 +50,8 @@ function RootNavigator() {
       <Stack.Screen name="LevelTwo" component={LevelTwoScreen} options={{ headerShown: false }} />
       <Stack.Screen name="LevelThree" component={LevelThreeScreen} options={{ headerShown: false }} />
       <Stack.Screen name="InConstruction" component={InConstructionScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="Quiz" component={QuizScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="Questions" component={QuestionsScreen} options={{ headerShown: false }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />

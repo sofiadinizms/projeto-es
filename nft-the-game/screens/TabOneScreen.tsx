@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
@@ -19,7 +19,7 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
           <TouchableOpacity style={styles.menuButton} onPress={() => {setSection(1)}} >
             <Text style={styles.buttonText}>Níveis</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.menuButton} onPress={() => {setSection(1)}} >
+          <TouchableOpacity style={styles.menuButton} onPress={() => {setSection(3)}} >
             <Text style={styles.buttonText}>Quiz</Text>
           </TouchableOpacity>
           <View style={styles.sectionFooter}>
@@ -61,9 +61,30 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </Text>
           </View>
+          <TouchableOpacity style={styles.menuButton} onPress={() => {Linking.openURL('https://projeto-nft-o-jogo.herokuapp.com')}}>
+            <Text style={styles.buttonText}>Conheça nosso site</Text>
+          </TouchableOpacity>
           <TouchableOpacity style={styles.menuButton} onPress={() => {setSection(0)}}>
             <Text style={styles.buttonText}>Voltar</Text>
           </TouchableOpacity>
+        </>
+      )}
+      {section === 3 && (
+        <>
+          <View style={styles.sectionTitleContainer}>
+            <Text style={styles.title}>Quiz</Text>
+          </View>
+          <TouchableOpacity style={styles.menuButton} onPress={() => {navigation.navigate("Quiz")}} >
+            <Text style={styles.buttonText}>Começar</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.menuButton} onPress={() => {navigation.navigate("Questions")}} >
+            <Text style={styles.buttonText}>Ver perguntas e respostas</Text>
+          </TouchableOpacity>
+          <View style={styles.sectionFooter}>
+            <TouchableOpacity style={styles.menuButton} onPress={() => {setSection(0)}}>
+            <Text style={styles.buttonText}>Voltar</Text>
+            </TouchableOpacity>
+          </View>
         </>
       )}
     </View>
