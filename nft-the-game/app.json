@@ -19,7 +19,7 @@
     },
     "android": {
       "package": "com.vitoriadeveloper.nftthegame",
-      "versionCode": 1,
+      "versionCode": 2,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/appIcon.png",
         "backgroundColor": "#41B2B9"
