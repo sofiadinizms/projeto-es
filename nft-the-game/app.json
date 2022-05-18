@@ -2,7 +2,7 @@
   "expo": {
     "name": "nft-the-game",
     "slug": "nft-the-game",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/appIcon.png",
     "scheme": "myapp",
@@ -15,7 +15,7 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.vitoriadeveloper.nftthegame",
-      "buildNumber": "1.0.0"
+      "buildNumber": "1.1.0"
     },
     "android": {
       "package": "com.vitoriadeveloper.nftthegame",
