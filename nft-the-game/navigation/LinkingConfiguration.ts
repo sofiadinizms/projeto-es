@@ -20,9 +20,39 @@ const linking: LinkingOptions<RootStackParamList> = {
               TabOneScreen: 'one',
             },
           },
-          TabTwo: {
+          LevelOne: {
             screens: {
-              TabTwoScreen: 'two',
+              LevelOneScreen: 'one',
+            }
+          },
+          LevelTwo: {
+            screens: {
+              LevelTwoScreen: 'one',
+            }
+          },
+          LevelThree: {
+            screens: {
+              LevelThreeScreen: 'one',
+            }
+          },
+          Questions: {
+            screens: {
+              QuestionsScreen: 'one'
+            }
+          },
+          Quiz: {
+            screens: {
+              QuizScreen: 'one'
+            }
+          },
+          Score: {
+            screens: {
+              ScoreScreen: 'one'
+            }
+          },
+          InConstruction: {
+            screens: {
+              InConstructionScreen: 'two',
             },
           },
         },
